@@ -30,6 +30,7 @@
       width: 90%;
       max-width: 350px;
       transition: transform 0.5s ease-in-out;
+      position: relative;
     }
     h2 {
       font-size: 22px;
@@ -39,9 +40,9 @@
     }
     .btn-container {
       display: flex;
-      justify-content: center;
-      gap: 20px;
+      justify-content: space-between;
       margin-top: 15px;
+      position: relative;
     }
     button {
       padding: 12px 20px;
@@ -56,12 +57,18 @@
       background: green;
       color: white;
     }
+    .no-container {
+      position: absolute;
+      right: 0;
+      top: 0;
+      width: 50%;
+      height: 50px;
+    }
     .no {
       background: red;
       color: white;
       position: absolute;
     }
-    /* Mobile Styles */
     @media (max-width: 600px) {
       .box {
         max-width: 90%;
@@ -86,7 +93,9 @@
     <p>Sorry for my words and all my mistakes. Can you forgive me? 🥺</p>
     <div class="btn-container">
       <button class="yes" onclick="nextPage(true)">Yes</button>
-      <button class="no" id="noBtn" onmouseover="moveButton()">No</button>
+      <div class="no-container">
+        <button class="no" id="noBtn" onmouseover="moveButton()">No</button>
+      </div>
     </div>
   </div>
 
@@ -118,3 +127,4 @@
   </script>
 </body>
 </html>
+
