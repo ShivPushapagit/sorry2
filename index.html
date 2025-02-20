@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Romantic Apology</title>
+  <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      background: linear-gradient(135deg, #65282a, #fad0c4);
+      text-align: center;
+      font-family: 'Dancing Script', cursive;
+      overflow: hidden;
+      padding: 20px;
+    }
+    .box {
+      background: rgba(255, 255, 255, 0.9);
+      padding: 20px;
+      border-radius: 15px;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+      width: 90%;
+      max-width: 350px;
+      transition: transform 0.5s ease-in-out;
+    }
+    h2 {
+      font-size: 22px;
+    }
+    p {
+      font-size: 18px;
+    }
+    .btn-container {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      margin-top: 15px;
+    }
+    button {
+      padding: 12px 20px;
+      font-size: 16px;
+      border: none;
+      cursor: pointer;
+      border-radius: 8px;
+      transition: 0.3s;
+      width: 40%;
+    }
+    .yes {
+      background: green;
+      color: white;
+    }
+    .no {
+      background: red;
+      color: white;
+      position: absolute;
+    }
+    /* Mobile Styles */
+    @media (max-width: 600px) {
+      .box {
+        max-width: 90%;
+        padding: 15px;
+      }
+      h2 {
+        font-size: 20px;
+      }
+      p {
+        font-size: 16px;
+      }
+      button {
+        font-size: 14px;
+        padding: 10px 15px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="box">
+    <h2>HEY MY LOVE ❤️</h2>
+    <p>Sorry for my words and all my mistakes. Can you forgive me? 🥺</p>
+    <div class="btn-container">
+      <button class="yes" onclick="nextPage(true)">Yes</button>
+      <button class="no" id="noBtn" onmouseover="moveButton()">No</button>
+    </div>
+  </div>
+
+  <script>
+    function nextPage(isYes) {
+      document.body.innerHTML = `
+        <div class="fade" style="
+          display: flex; justify-content: center; align-items: center; height: 100vh; 
+          background-image: url('my.jpg'); /* Replace with your image */
+          background-size: cover;
+          background-position: center;
+          background-repeat: no-repeat;
+          padding: 20px;
+        ">
+          <h1 style="background: rgba(255, 255, 255, 0.8); padding: 15px; border-radius: 10px; font-size: 22px; text-align: center;">
+            ${isYes ? "Thank you my love! ❤️😘" : "Please sorry na babu... 🥺💖"}
+          </h1>
+        </div>
+      `;
+    }
+
+    function moveButton() {
+      let noBtn = document.getElementById("noBtn");
+      let x = Math.random() * (window.innerWidth - 100);
+      let y = Math.random() * (window.innerHeight - 200);
+      noBtn.style.left = `${x}px`;
+      noBtn.style.top = `${y}px`;
+    }
+  </script>
+</body>
+</html>
